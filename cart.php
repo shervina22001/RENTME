@@ -107,6 +107,17 @@ include_once "helper.php";
         </tbody>
     </table>
 
+    <!--Button-->
+<div style="text-align:right">
+  <div class="container">
+    <div class="row">
+        <div class="text-left">
+          <a href="transaction.php" class="btn btn-primary btn-lg active btn-rounded" role="button" aria-pressed="true" style="margin-top: 20px; margin-right: -20px; background-color: #D1C8C1;">CHECK OUT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 <?php include_once "scripts.php" ?>

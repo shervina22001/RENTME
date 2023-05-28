@@ -1,10 +1,12 @@
 <?php
-// Initialize the session
-session_start();
+// Initialize the session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:white;">
         <div class="container-fluid">
             <!-- Navbar brand -->
             <a class="navbar-brand" aria-current="page" href="index.php">
@@ -13,7 +15,7 @@ session_start();
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarExample01">
+            <div class="collapse navbar-collapse" id="navbarExample01" style="flex-grow:0;">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="shop.php">

@@ -3,6 +3,9 @@
 include_once "connection.php";
 include_once "helper.php";
 
+// Initialize the session
+session_start();
+
 // Retrieve the form data
 $email = $_POST['email'];
 $password = $_POST['password'];

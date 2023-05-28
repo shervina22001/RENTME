@@ -1,28 +1,14 @@
 <?php
 
+include_once "connection.php";
 include_once "helper.php";
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>RENTME</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <style>
-        .navbar-brand {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-    </style>
-</head>
+<?php include_once "header.php"; ?>
 
 <body>
     <!-- Modal -->
@@ -78,7 +64,11 @@ include_once "helper.php";
                 <td colspan="5" style="text-align: right;">Total</td>
                 <?php
                 $total = 0;
-                $cart = $_SESSION['cart'];
+                if (isset($_SESSION['cart'])) {
+                    $cart = $_SESSION['cart'];
+                } else {
+                    $cart = [];
+                }
                 foreach ($cart as $item) {
                     $total += $item['harga'];
                 }
@@ -108,16 +98,16 @@ include_once "helper.php";
     </table>
 
     <!--Button-->
-<div style="text-align:right">
-  <div class="container">
-    <div class="row">
-        <div class="text-left">
-          <a href="transaction.php" class="btn btn-primary btn-lg active btn-rounded" role="button" aria-pressed="true" style="margin-top: 20px; margin-right: -20px; background-color: #D1C8C1;">CHECK OUT</a>
+    <div style="text-align:right">
+        <div class="container">
+            <div class="row">
+                <div class="text-left">
+                    <a href="transaction.php" class="btn btn-primary btn-lg active btn-rounded" role="button" aria-pressed="true" style="margin-top: 20px; margin-right: -20px; background-color: #D1C8C1;">CHECK OUT</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+    </div>
 </body>
 
 <?php include_once "scripts.php" ?>
